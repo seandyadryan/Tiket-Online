@@ -3,7 +3,6 @@
 Frontend Vue.js untuk UI pemesanan tiket bus online Hiba Putra. Form booking sudah diarahkan
 ke API environment dev untuk data asal, tujuan, dan jumlah maksimal penumpang.
 
-Backend `D:\ticket-api` dan database SQL Server tidak diubah.
 
 ## Fitur UI
 
@@ -20,11 +19,6 @@ Backend `D:\ticket-api` dan database SQL Server tidak diubah.
 corepack pnpm install
 corepack pnpm run dev
 ```
-
-## Environment API
-
-- Dev: `https://apiakapticketdev.hibautama.com/api/`
-- Prod: `https://apiakapticket.hibautama.com/api/`
 
 Default `build` saat ini memakai environment dev terlebih dahulu.
 Endpoint auth mengikuti aplikasi mobile:
