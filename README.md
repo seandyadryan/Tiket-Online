@@ -1,13 +1,14 @@
 # Hiba Putra - Tiket Online
 
-Frontend Vue.js untuk UI pemesanan tiket bus online Hiba Putra. Aplikasi ini hanya berisi
-antarmuka pengguna dengan data statis untuk demo.
+Frontend Vue.js untuk UI pemesanan tiket bus online Hiba Putra. Form booking sudah diarahkan
+ke API environment dev untuk data asal, tujuan, dan jumlah maksimal penumpang.
 
 Backend `D:\ticket-api` dan database SQL Server tidak diubah.
 
 ## Fitur UI
 
-- Form pencarian rute, tanggal perjalanan, dan jumlah penumpang.
+- Form pencarian rute, tanggal perjalanan, dan jumlah penumpang dari API dev.
+- Login, register, dan login dengan Gmail menggunakan Firebase + endpoint auth API.
 - Daftar jadwal bus dengan harga, fasilitas, titik naik, dan titik turun.
 - Simulasi pemilihan kursi dan ringkasan total.
 - Area promo, rute populer, highlight layanan, FAQ, dan footer.
@@ -16,14 +17,36 @@ Backend `D:\ticket-api` dan database SQL Server tidak diubah.
 ## Menjalankan Lokal
 
 ```bash
-npm install
-npm run dev
+corepack pnpm install
+corepack pnpm run dev
+```
+
+## Environment API
+
+- Dev: `https://apiakapticketdev.hibautama.com/api/`
+- Prod: `https://apiakapticket.hibautama.com/api/`
+
+Default `build` saat ini memakai environment dev terlebih dahulu.
+Endpoint auth mengikuti aplikasi mobile:
+
+- `auth/login`
+- `auth/register`
+- `auth/external-auth`
+
+```bash
+corepack pnpm run build
+```
+
+Untuk build production:
+
+```bash
+corepack pnpm run build:prod
 ```
 
 ## Build Untuk Apache Ubuntu 22.04.5
 
 ```bash
-npm run build
+corepack pnpm run build
 ```
 
 Salin isi folder `dist` ke document root Apache, misalnya:
@@ -33,5 +56,4 @@ sudo rsync -av dist/ /var/www/html/
 sudo systemctl reload apache2
 ```
 
-Jika nanti frontend dihubungkan ke backend, arahkan request API ke service dari
-`D:\ticket-api` melalui konfigurasi environment atau reverse proxy Apache.
+Jika nanti frontend diarahkan ke production, gunakan `corepack pnpm run build:prod`.
