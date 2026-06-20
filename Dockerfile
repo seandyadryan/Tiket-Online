@@ -6,7 +6,7 @@ COPY package.json ./
 RUN npm install
 
 COPY . .
-RUN pnpm run build:prod
+RUN npm run build:prod
 
 FROM nginx:1.27-alpine
 
