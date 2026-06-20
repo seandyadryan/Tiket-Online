@@ -3,7 +3,7 @@ FROM node:22-alpine AS build
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
-RUN corepack enable && pnpm install --frozen-lockfile
+RUN corepack enable && pnpm install --frozen-lockfile --allow-build=esbuild --allow-build=protobufjs --allow-build=@firebase/util
 
 COPY . .
 RUN pnpm run build:prod
