@@ -2263,14 +2263,18 @@ h3 {
   font-weight: 900;
 }
 
-.google-button span {
+.google-logo {
   display: grid;
   place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  color: #ffffff;
-  background: #4285f4;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+.google-logo svg {
+  display: block;
+  width: 22px;
+  height: 22px;
 }
 
 .auth-message {
